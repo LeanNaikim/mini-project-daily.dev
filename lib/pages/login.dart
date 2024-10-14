@@ -75,9 +75,17 @@ class LoginHomePage extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignupPage(),
+                      ),
+                    );
                   },
-                  child: const Text('Login' , style: TextStyle(fontSize: 17.0)),
+                  child: const Text(
+                      'Login' ,
+                      style: TextStyle(fontSize: 17.0),
+                  ),
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(

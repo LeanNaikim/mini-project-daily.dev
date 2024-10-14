@@ -1,5 +1,3 @@
-// blog_model.dart
-
 class Blog {
   final String id;
   final String title;
@@ -23,14 +21,11 @@ class Blog {
     required this.categories,
   });
 
-
-  // Method to get formatted date
   String getFormattedDate() {
     DateTime dateTime = DateTime.parse(createdAt);
     return '${dateTime.year}-${dateTime.month.toString().padLeft(2, '0')}-${dateTime.day.toString().padLeft(2, '0')}';
   }
 
-  // Factory method to create a Blog object from JSON
   factory Blog.fromJson(Map<String, dynamic> json) {
     return Blog(
       id: json['id'],
@@ -42,9 +37,9 @@ class Blog {
       numberOfBookmarks: json['number_of_bookmarks'],
       content: json['content'],
       categories: [
-        Category(id: "23c70ee2-df8c-4284-a5b5-3302a0702a6b", name: "Education"),
-        // Add more categories as needed
+        Category(id: "", name: ""),
       ],
+
     );
   }
 }
@@ -60,7 +55,7 @@ class Author {
     required this.createdAt,
   });
 
-  // Factory method to create an Author object from JSON
+
   factory Author.fromJson(Map<String, dynamic> json) {
     return Author(
       username: json['username'],
@@ -69,7 +64,6 @@ class Author {
     );
   }
 }
-
 
 class Category {
   final String id;

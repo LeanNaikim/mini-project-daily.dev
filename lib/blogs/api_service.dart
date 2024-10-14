@@ -11,7 +11,7 @@ Future<List<Blog>> fetchBlogs() async {
     // Parse the JSON data
     List<dynamic> jsonList = jsonDecode(response.body)['blogs'];
 
-    // Convert JSON data into a list of Blog objects
+
     return jsonList.map((json) => Blog.fromJson(json)).toList();
   } else {
     throw Exception('Failed to load blogs');

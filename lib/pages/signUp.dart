@@ -1,7 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mini_project/pages/api_test.dart';
 import 'package:mini_project/pages/login.dart';
+
+import '../main.dart';
 
 void main (){
   runApp(const SignupPage());
@@ -99,9 +102,14 @@ class SignupHomePage extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MyApp(),
+                        ),
+                      );
                     },
-                    child: const Text('Login' , style: TextStyle(fontSize: 17.0)),
+                    child: const Text('Sign up' , style: TextStyle(fontSize: 17.0)),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(
